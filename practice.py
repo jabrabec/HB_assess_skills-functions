@@ -162,7 +162,13 @@ def sign_and_parity(integer):
     return result
 
 
-## more verbose way to do this but this also works:
+example_result = sign_and_parity(-5)
+
+example_sign, example_parity = example_result
+
+print example_sign, example_parity
+
+## this is a more verbose way to write sign_and_parity but it also works:
 # def sign_and_parity(integer):
 #     result = []
 #     if integer % 2 == 0:
@@ -179,6 +185,7 @@ def sign_and_parity(integer):
 #         #     result.append("Positive")
 #     return result
 
+
 ################################################################################
 # PART TWO
 
@@ -186,6 +193,10 @@ def sign_and_parity(integer):
 #    Take a name and a job title as parameters, making it so the
 #    job title defaults to "Engineer" if a job title is not passed in.
 #    Return the person's title and name in one string.
+
+
+def full_title(name, title="Engineer"):
+    return title + " " + name
 
 # 2. Given a recipient name & job title and a sender name,
 #    print the following letter:
@@ -195,6 +206,10 @@ def sign_and_parity(integer):
 #
 #    Use the function from #1 to construct the full title for the letter's
 #    greeting.
+
+
+def write_letter(name, title, sender):
+    print "Dear " + full_title(name, title) + ", I think you are amazing! Sincerely, " + sender
 
 
 #####################################################################
