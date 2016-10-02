@@ -43,21 +43,43 @@ def is_berry(fruit):
 #        == True``, and `5` if ``is_berry() == False``.
 
 
-# def shipping_cost():
-    
+def shipping_cost(fruit):
+    if is_berry(fruit) is True:
+        return 0
+    else:
+        return 5
 
 # 2. (a) Write a function, `is_hometown()`, which takes a town name as a string
 #        and evaluates to `True` if it is your hometown, and `False` otherwise.
-#
+
+
+def is_hometown(townname):
+    if townname.lower() == "livermore":
+        return True
+    else:
+        return False
+
 #    (b) Write a function, `full_name()`, which takes a first and last name as
 #        arguments as strings and returns the concatenation of the two names in
 #        one string.
-#
+
+
+def full_name(first, last):
+    return first + " " + last
+
 #    (c) Write a function, `hometown_greeting()`, which takes a home town, a
 #        first name, and a last name as strings as arguments, calls both
 #        `is_hometown()` and `full_name()` and prints "Hi, 'full name here',
 #        we're from the same place!", or "Hi 'full name here', where are you
 #        from?" depending on what `is_hometown()` evaluates to.
+
+
+def hometown_greeting(townname, first, last):
+    if is_hometown(townname) is True:
+        print "Hi, " + full_name(first, last) + ", we're from the same place!"
+    else:
+        print "Hi, " + full_name(first, last) + ", where are you from?"
+
 
 #####################################################################
 
