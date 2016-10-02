@@ -101,7 +101,7 @@ def print_sign(integer):
     if integer > 0:
         print "Higher than 0"
     elif integer < 0:
-        print "Less than 0"
+        print "Lower than 0"
     else:
         print "Zero"
 
@@ -120,12 +120,18 @@ def is_divisible_by_three(integer):
 #    returns the number of spaces.
 
 
+def num_spaces(sentence):
+    return sentence.count(" ")
+
 # 8. Write a function called 'total_meal_price' that can be passed a meal price and a
 #    tip percentage. It should return the total amount paid
 #    (price + price * tip). **However:** passing in the tip
 #    percentage should be optional; if not given, it should
 #    default to 15%.
 
+
+def total_meal_price(price, tip=0.15):
+    return price + price * tip
 
 # 9. Write a function called 'sign_and_parity' that takes an integer as an argument and
 #    returns two pieces of information as strings ---
@@ -137,6 +143,41 @@ def is_divisible_by_three(integer):
 #    variables --- sign and parity (whether it's even or odd).
 #    Print sign and parity.
 
+
+def pos_neg_test(integer):
+        if integer < 0:
+            return "Negative"
+        elif integer > 0:
+            return "Positive"
+
+
+def sign_and_parity(integer):
+    result = []
+    if integer % 2 == 0:
+        result.append("Even")
+        result.append(pos_neg_test(integer))
+    elif integer % 2 != 0:
+        result.append("Odd")
+        result.append(pos_neg_test(integer))
+    return result
+
+
+## more verbose way to do this but this also works:
+# def sign_and_parity(integer):
+#     result = []
+#     if integer % 2 == 0:
+#         result.append("Even")
+#         # if integer < 0:
+#         #     result.append("Negative")
+#         # elif integer > 0:
+#         #     result.append("Positive")
+#     elif integer % 2 != 0:
+#         result.append("Odd")
+#         # if integer < 0:
+#         #     result.append("Negative")
+#         # elif integer > 0:
+#         #     result.append("Positive")
+#     return result
 
 ################################################################################
 # PART TWO
