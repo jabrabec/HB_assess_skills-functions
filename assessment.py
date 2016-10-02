@@ -99,7 +99,7 @@ def increment(x=1):
 #    addfive with y = 5. Call again with y = 20.
 
 addfive = increment(5)
-print(addfive)
+# print(addfive)
 print(addfive(5))
 print(addfive(20))
 
