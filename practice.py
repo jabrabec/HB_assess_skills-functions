@@ -111,6 +111,8 @@ def print_sign(integer):
 
 
 def is_divisible_by_three(integer):
+    # if input divided by 3 has a remainder of 0, integer is divisible by 3
+    # and function returns True
     if integer % 3 == 0:
         return True
     else:
@@ -121,6 +123,8 @@ def is_divisible_by_three(integer):
 
 
 def num_spaces(sentence):
+    # .count() method works on a string (the sentence argument here) and returns
+    # the number of instances of whatever substring is entered between parentheses
     return sentence.count(" ")
 
 # 8. Write a function called 'total_meal_price' that can be passed a meal price and a
@@ -131,6 +135,8 @@ def num_spaces(sentence):
 
 
 def total_meal_price(price, tip=0.15):
+    # parentheses not required because order of operations rules will perform
+    # (price * tip) before before (price + price)
     return price + price * tip
 
 # 9. Write a function called 'sign_and_parity' that takes an integer as an argument and
@@ -144,6 +150,13 @@ def total_meal_price(price, tip=0.15):
 #    Print sign and parity.
 
 
+## JB Comments:
+## I wrote a second function, pos_neg_test, to call within sign_and_parity
+## in order to avoid some repetition. A single-function solution starts
+## on line 193.
+# this pos_neg_test function tests if an integer is less than 0
+# (therfore is negative) or is greater than 0 (therefore is positive),
+# corresponding to -/+ sign on integers. The sign of integer = 0 is undefined.
 def pos_neg_test(integer):
         if integer < 0:
             return "Negative"
@@ -151,6 +164,12 @@ def pos_neg_test(integer):
             return "Positive"
 
 
+## JB Comments:
+# as above, function examines integer input for even or odd quality.
+# after odd/even is determined, the pos_neg_test function is called on the
+# integer to further assign positive or negative characteristic
+# results are appended to empty list 'result' in this order (parity then sign)
+# and then returned at end of function
 def sign_and_parity(integer):
     result = []
     if integer % 2 == 0:
@@ -161,28 +180,30 @@ def sign_and_parity(integer):
         result.append(pos_neg_test(integer))
     return result
 
-
+## JB comment: tests as per instructions on lines 147-150 are on lines 184-188
 example_result = sign_and_parity(-5)
 
 example_sign, example_parity = example_result
 
 print example_sign, example_parity
 
-## this is a more verbose way to write sign_and_parity but it also works:
+# # JB Comments:
+# # this is a more verbose way to write sign_and_parity without creating a
+# #  second pos_neg_test function, which also works:
 # def sign_and_parity(integer):
 #     result = []
 #     if integer % 2 == 0:
 #         result.append("Even")
-#         # if integer < 0:
-#         #     result.append("Negative")
-#         # elif integer > 0:
-#         #     result.append("Positive")
+#         if integer < 0:
+#             result.append("Negative")
+#         elif integer > 0:
+#             result.append("Positive")
 #     elif integer % 2 != 0:
 #         result.append("Odd")
-#         # if integer < 0:
-#         #     result.append("Negative")
-#         # elif integer > 0:
-#         #     result.append("Positive")
+#         if integer < 0:
+#             result.append("Negative")
+#         elif integer > 0:
+#             result.append("Positive")
 #     return result
 
 
